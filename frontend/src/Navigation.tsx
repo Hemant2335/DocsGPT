@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
+import User from './assets/user.svg';
 import Arrow1 from './assets/arrow.svg';
 import Arrow2 from './assets/dropdown-arrow.svg';
 import Exit from './assets/exit.svg';
@@ -360,6 +361,21 @@ export default function Navigation({ navOpen, setNavOpen }: NavigationProps) {
             <img src={Github} alt="link" className="ml-2 w-5" />
             <p className="my-auto text-eerie-black">Visit our Github</p>
           </a>
+          <NavLink
+            to="/login"
+            className={({ isActive }) =>
+              `my-auto mx-4 flex h-9 cursor-pointer items-center gap-4 rounded-3xl hover:bg-gray-100 ${
+                isActive ? 'bg-gray-3000' : ''
+              }`
+            }
+          >
+            <img
+              src={User}
+              alt="info"
+              className="ml-2 h-[2vh] w-5 opacity-50"
+            />
+            <p className="my-auto text-eerie-black">Login</p>
+          </NavLink>
         </div>
       </div>
       <div className="fixed h-16 w-full border-b-2 bg-gray-50 md:hidden">
