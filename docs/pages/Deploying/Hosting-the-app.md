@@ -1,10 +1,10 @@
 # Self-hosting DocsGPT on Amazon Lightsail
 
-Here's a step-by-step guide on how to setup an Amazon Lightsail instance to host DocsGPT.
+Here's a step-by-step guide on how to set up an Amazon Lightsail instance to host DocsGPT.
 
 ## Configuring your instance
 
-(If you know how to create a Lightsail instance, you can skip to the recommended configuration part by clicking here).
+(If you know how to create a Lightsail instance, you can skip to the recommended configuration part by clicking [here](#connecting-to-your-newly-created-instance)).
 
 ### 1. Create an AWS Account: 
 If you haven't already, create or log in to your AWS account at https://lightsail.aws.amazon.com.
@@ -51,7 +51,7 @@ And now install docker-compose:
 
 #### Access the DocsGPT Folder
 
-Enter the following command to access the folder in which DocsGPT docker-compose file is present.
+Enter the following command to access the folder in which the DocsGPT docker-compose file is present.
 
 `cd DocsGPT/`
 
@@ -102,3 +102,8 @@ Repeat the process for port `7091`.
 #### Access your instance
 
 Your instance is now available at your Public IP Address on port 5173. Enjoy using DocsGPT!
+
+## Other Deployment Options
+
+- [Deploy DocsGPT on Civo Compute Cloud](https://dev.to/rutamhere/deploying-docsgpt-on-civo-compute-c)
+- [Deploy DocsGPT on DigitalOcean Droplet](https://dev.to/rutamhere/deploying-docsgpt-on-digitalocean-droplet-50ea)
