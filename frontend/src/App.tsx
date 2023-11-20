@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Navigation from './Navigation';
 import Conversation from './conversation/Conversation';
 import About from './About';
@@ -14,16 +14,20 @@ inject();
 export default function App() {
   const { isMobile } = useMediaQuery();
   const [navOpen, setNavOpen] = useState(!isMobile);
+  const location = useLocation();
+
+  // Checking for the login page
+  const isLogin = location.pathname === '/login';
 
   return (
     <div className="min-h-full min-w-full">
-      <Navigation navOpen={navOpen} setNavOpen={setNavOpen} />
+      {!isLogin && <Navigation navOpen={navOpen} setNavOpen={setNavOpen} />}
       <div
-        className={`transition-all duration-200 ${
-          !isMobile
+        className={`transition-all duration-200  ${
+          !isMobile 
             ? `ml-0 ${!navOpen ? '-mt-5 md:mx-auto lg:mx-auto' : 'md:ml-72'}`
             : 'ml-0 md:ml-16'
-        }`}
+        }${isLogin && `ml-0`}`}
       >
         <Routes>
           <Route path="/" element={<Conversation />} />
